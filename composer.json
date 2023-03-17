@@ -5,7 +5,12 @@
         "php": "^8.2",
         "ext-oauth": "*",
         "ext-pdo": "*",
-        "ext-redis": "*"
+        "ext-redis": "*",
+        "buzzingpixel/mission-control-backend-core": "dev-main",
+        "league/oauth2-server": "^8.4",
+        "psr/cache": "^3.0",
+        "spatie/php-cloneable": "^1.0",
+        "symfony/cache": "^6.2"
     },
     "require-dev": {
         "doctrine/coding-standard": "^11.0.0",
