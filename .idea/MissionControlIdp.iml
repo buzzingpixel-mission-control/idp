@@ -45,6 +45,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/qiq/qiq" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/crell/tukio" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/slim/csrf" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

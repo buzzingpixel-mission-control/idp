@@ -74,6 +74,8 @@
       <path value="$PROJECT_DIR$/vendor/qiq/qiq" />
       <path value="$PROJECT_DIR$/vendor/buzzingpixel/container" />
       <path value="$PROJECT_DIR$/vendor/crell/tukio" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/slim/csrf" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
