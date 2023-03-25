@@ -14,5 +14,10 @@ class EventRegistration
             AuthRouting::class,
             AuthRouting::class,
         );
+
+        $provider->addSubscriber(
+            EventRegistrationMigrations::class,
+            EventRegistrationMigrations::class,
+        );
     }
 }
