@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Project JS Compilation Files" pattern="file[MissionControlIdp]:assets/src/js//*.js||file[MissionControlIdp]:assets/src/js//*.jsx||file[MissionControlIdp]:assets/src/js//*.ts||file[MissionControlIdp]:assets/src/js//*.tsx" />
+</component>

@@ -11,20 +11,21 @@ declare(strict_types=1);
 use BuzzingPixel\Templating\TemplateEngine;
 use MissionControlBackend\Http\HtmlLayout;
 use MissionControlBackend\Templating\FullPageLoading;
+use MissionControlBackend\Templating\VendorCss;
+use MissionControlBackend\Templating\VendorJs;
+use MissionControlIdp\IdpCssJsPaths;
 
 /** @phpstan-ignore-next-line */
 assert($this instanceof TemplateEngine);
 
 $this->extends(HtmlLayout::PATH);
 
+VendorCss::addVendorPath(IdpCssJsPaths::CSS);
+
+VendorJs::addVendorPath(IdpCssJsPaths::JS);
+
 ?>
 
 <div data-react-container="log-in">
     <?= $this->partial(FullPageLoading::PATH) ?>
 </div>
-
-<?php $this->sectionStart('react-script') ?>
-<script>
-    console.log('here');
-</script>
-<?php $this->sectionEnd(); ?>
