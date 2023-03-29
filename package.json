@@ -1,0 +1,10 @@
+{
+    "name": "mission-control-idp",
+    "scripts": {
+        "build-css": "npx tailwindcss -i ./assets/src/main.css -o assets/dist/main.css --minify"
+    },
+    "author": "TJ Draper",
+    "dependencies": {
+        "tailwindcss": "^3.2.7"
+    }
+}

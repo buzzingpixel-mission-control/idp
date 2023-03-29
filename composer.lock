@@ -191,12 +191,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/buzzingpixel-mission-control/backend-core.git",
-                "reference": "525e3002cff384c389b50293081dfb13a90f96fd"
+                "reference": "6c2d04619605c874cdc987642210fd2130d0fdf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/525e3002cff384c389b50293081dfb13a90f96fd",
-                "reference": "525e3002cff384c389b50293081dfb13a90f96fd",
+                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/6c2d04619605c874cdc987642210fd2130d0fdf3",
+                "reference": "6c2d04619605c874cdc987642210fd2130d0fdf3",
                 "shasum": ""
             },
             "require": {
@@ -242,7 +242,7 @@
                 "issues": "https://github.com/buzzingpixel-mission-control/backend-core/issues",
                 "source": "https://github.com/buzzingpixel-mission-control/backend-core/tree/main"
             },
-            "time": "2023-03-28T22:02:06+00:00"
+            "time": "2023-03-29T04:29:00+00:00"
         },
         {
             "name": "buzzingpixel/php-template-engine",
