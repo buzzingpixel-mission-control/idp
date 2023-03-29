@@ -71,7 +71,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
       <path value="$PROJECT_DIR$/vendor/buzzingpixel/mission-control-backend-core" />
-      <path value="$PROJECT_DIR$/vendor/qiq/qiq" />
       <path value="$PROJECT_DIR$/vendor/buzzingpixel/container" />
       <path value="$PROJECT_DIR$/vendor/crell/tukio" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
@@ -85,6 +84,15 @@
       <path value="$PROJECT_DIR$/vendor/cakephp/utility" />
       <path value="$PROJECT_DIR$/vendor/cakephp/core" />
       <path value="$PROJECT_DIR$/vendor/robmorgan/phinx" />
+      <path value="$PROJECT_DIR$/vendor/marcusschwarz/lesserphp" />
+      <path value="$PROJECT_DIR$/vendor/intervention/httpauth" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/jsmin-php" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/props-dic" />
+      <path value="$PROJECT_DIR$/vendor/buzzingpixel/php-template-engine" />
+      <path value="$PROJECT_DIR$/vendor/buzzingpixel/minify-middleware" />
+      <path value="$PROJECT_DIR$/vendor/buzzingpixel/minifier" />
+      <path value="$PROJECT_DIR$/vendor/tubalmartin/cssmin" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

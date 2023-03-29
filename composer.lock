@@ -59,21 +59,150 @@
             "time": "2023-03-23T15:03:18+00:00"
         },
         {
+            "name": "buzzingpixel/minifier",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buzzingpixel/minifier.git",
+                "reference": "d829d9a18dc2eb9c5c1ae1aa4c28ba88660cfa75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buzzingpixel/minifier/zipball/d829d9a18dc2eb9c5c1ae1aa4c28ba88660cfa75",
+                "reference": "d829d9a18dc2eb9c5c1ae1aa4c28ba88660cfa75",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "intervention/httpauth": "^2.0|^3.0",
+                "marcusschwarz/lesserphp": "^0.5.5",
+                "monolog/monolog": "^3.0",
+                "mrclay/jsmin-php": "~2",
+                "mrclay/props-dic": "^2.2|^3.0",
+                "php": "^7.0 || ^8.0",
+                "tubalmartin/cssmin": "~4"
+            },
+            "require-dev": {
+                "firephp/firephp-core": "~0.4.0",
+                "leafo/scssphp": "^0.3 || ^0.6 || ^0.7",
+                "meenie/javascript-packer": "~1.1",
+                "phpunit/phpunit": "^10.0",
+                "tedivm/jshrink": "~1.1.0"
+            },
+            "suggest": {
+                "firephp/firephp-core": "Use FirePHP for Log messages",
+                "meenie/javascript-packer": "Keep track of the Packer PHP port using Composer"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "TJ Draper",
+                    "email": "tj@buzzingpixel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minify is a PHP app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
+            "homepage": "https://github.com/buzzingpixel/minifier",
+            "support": {
+                "source": "https://github.com/buzzingpixel/minifier/tree/1.0.0"
+            },
+            "time": "2023-03-28T21:32:48+00:00"
+        },
+        {
+            "name": "buzzingpixel/minify-middleware",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buzzingpixel/minify-middleware.git",
+                "reference": "66ddd058385c6409d6d70ae4bd96a2b732bf8c39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buzzingpixel/minify-middleware/zipball/66ddd058385c6409d6d70ae4bd96a2b732bf8c39",
+                "reference": "66ddd058385c6409d6d70ae4bd96a2b732bf8c39",
+                "shasum": ""
+            },
+            "require": {
+                "buzzingpixel/minifier": "^1.0",
+                "php": "^8.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-server-middleware": "^1.0",
+                "slim/psr7": "^1.5"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.32.0",
+                "doctrine/coding-standard": "^9",
+                "friendsofphp/php-cs-fixer": "^3.15.1",
+                "league/flysystem": "^1.0.0",
+                "php-di/php-di": "^6.3",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.5",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.6",
+                "symfony/var-dumper": "^5.3",
+                "vimeo/psalm": "^5.8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BuzzingPixel\\Minify\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "TJ Draper",
+                    "email": "tj@buzzingpixel.com",
+                    "homepage": "https://buzzingpixel.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/buzzingpixel/minify-middleware/issues",
+                "source": "https://github.com/buzzingpixel/minify-middleware/tree/1.1.0"
+            },
+            "time": "2023-03-28T21:54:20+00:00"
+        },
+        {
             "name": "buzzingpixel/mission-control-backend-core",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/buzzingpixel-mission-control/backend-core.git",
-                "reference": "51940abb4e411e451126f6fe25ab3669749bfb3f"
+                "reference": "525e3002cff384c389b50293081dfb13a90f96fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/51940abb4e411e451126f6fe25ab3669749bfb3f",
-                "reference": "51940abb4e411e451126f6fe25ab3669749bfb3f",
+                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/525e3002cff384c389b50293081dfb13a90f96fd",
+                "reference": "525e3002cff384c389b50293081dfb13a90f96fd",
                 "shasum": ""
             },
             "require": {
                 "buzzingpixel/container": "^1.1",
+                "buzzingpixel/minify-middleware": "^1.1",
+                "buzzingpixel/php-template-engine": "^1.0",
                 "crell/tukio": "^1.4",
                 "ext-oauth": "*",
                 "ext-pdo": "*",
@@ -84,7 +213,6 @@
                 "psr/container": "^2.0",
                 "psr/event-dispatcher": "^1.0",
                 "psr/log": "^2.0",
-                "qiq/qiq": "^1.1",
                 "robmorgan/phinx": "^0.13.4",
                 "slim/csrf": "^1.3",
                 "slim/psr7": "^1.6",
@@ -114,7 +242,51 @@
                 "issues": "https://github.com/buzzingpixel-mission-control/backend-core/issues",
                 "source": "https://github.com/buzzingpixel-mission-control/backend-core/tree/main"
             },
-            "time": "2023-03-25T23:39:58+00:00"
+            "time": "2023-03-28T22:02:06+00:00"
+        },
+        {
+            "name": "buzzingpixel/php-template-engine",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buzzingpixel/php-template-engine.git",
+                "reference": "93d1327a2305f50a7e05cbefc2d70d3d121d9415"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buzzingpixel/php-template-engine/zipball/93d1327a2305f50a7e05cbefc2d70d3d121d9415",
+                "reference": "93d1327a2305f50a7e05cbefc2d70d3d121d9415",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-escaper": "^2.12",
+                "php": ">=8.2",
+                "spatie/php-cloneable": "^1.0"
+            },
+            "require-dev": {
+                "buzzingpixel/symfony-var-dumper-decorator": "^1.0",
+                "doctrine/coding-standard": "^11.0.0",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.5",
+                "squizlabs/php_codesniffer": "^3.6",
+                "symfony/var-dumper": "^6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BuzzingPixel\\Templating\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "support": {
+                "issues": "https://github.com/buzzingpixel/php-template-engine/issues",
+                "source": "https://github.com/buzzingpixel/php-template-engine/tree/1.0.0"
+            },
+            "time": "2023-03-28T04:21:50+00:00"
         },
         {
             "name": "cakephp/core",
@@ -663,6 +835,67 @@
             "time": "2020-11-24T22:02:12+00:00"
         },
         {
+            "name": "intervention/httpauth",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/httpauth.git",
+                "reference": "7742aa013e1a72f94379cb6623286f06fa1ea5f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/httpauth/zipball/7742aa013e1a72f94379cb6623286f06fa1ea5f7",
+                "reference": "7742aa013e1a72f94379cb6623286f06fa1ea5f7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.11",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Intervention\\HttpAuth\\Laravel\\HttpAuthServiceProvider"
+                    ],
+                    "aliases": {
+                        "HttpAuth": "Intervention\\HttpAuth\\Laravel\\Facades\\HttpAuth"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\HttpAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.com",
+                    "homepage": "https://olivervogel.com/"
+                }
+            ],
+            "description": "HTTP authentication (Basic & Digest) including ServiceProviders for easy Laravel integration",
+            "homepage": "https://github.com/Intervention/httpauth",
+            "keywords": [
+                "Authentication",
+                "http",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/httpauth/issues",
+                "source": "https://github.com/Intervention/httpauth/tree/3.0.3"
+            },
+            "time": "2021-01-22T15:08:35+00:00"
+        },
+        {
             "name": "laminas/laminas-escaper",
             "version": "2.12.0",
             "source": {
@@ -1176,6 +1409,62 @@
             "time": "2021-06-28T04:27:21+00:00"
         },
         {
+            "name": "marcusschwarz/lesserphp",
+            "version": "v0.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarcusSchwarz/lesserphp.git",
+                "reference": "77ba82b5218ff228267d3b0e5ec8697be75e86a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarcusSchwarz/lesserphp/zipball/77ba82b5218ff228267d3b0e5ec8697be75e86a7",
+                "reference": "77ba82b5218ff228267d3b0e5ec8697be75e86a7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8.35 <8"
+            },
+            "bin": [
+                "plessc"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                },
+                {
+                    "name": "Marcus Schwarz",
+                    "email": "github@maswaba.de",
+                    "homepage": "https://www.maswaba.de"
+                }
+            ],
+            "description": "lesserphp is a compiler for LESS written in PHP based on leafo's lessphp.",
+            "homepage": "http://leafo.net/lessphp/",
+            "support": {
+                "issues": "https://github.com/MarcusSchwarz/lesserphp/issues",
+                "source": "https://github.com/MarcusSchwarz/lesserphp/tree/v0.5.5"
+            },
+            "time": "2021-03-10T17:56:57+00:00"
+        },
+        {
             "name": "mnapoli/silly",
             "version": "1.8.1",
             "source": {
@@ -1337,6 +1626,118 @@
             "time": "2023-02-06T13:46:10+00:00"
         },
         {
+            "name": "mrclay/jsmin-php",
+            "version": "2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/jsmin-php.git",
+                "reference": "49feaa85933458c15bb62ae65644bf22d60b7610"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrclay/jsmin-php/zipball/49feaa85933458c15bb62ae65644bf22d60b7610",
+                "reference": "49feaa85933458c15bb62ae65644bf22d60b7610",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36|^9.5.26"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JSMin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ryan Grove",
+                    "email": "ryan@wonko.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a modified port of Douglas Crockford's jsmin.c, which removes unnecessary whitespace from JavaScript files.",
+            "homepage": "https://github.com/mrclay/jsmin-php/",
+            "keywords": [
+                "compress",
+                "jsmin",
+                "minify"
+            ],
+            "support": {
+                "email": "minify@googlegroups.com",
+                "issues": "https://github.com/mrclay/jsmin-php/issues",
+                "source": "https://github.com/mrclay/jsmin-php/tree/2.4.3"
+            },
+            "time": "2022-12-13T20:15:15+00:00"
+        },
+        {
+            "name": "mrclay/props-dic",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/Props.git",
+                "reference": "63fae3035770feee1836f57c7dd52c0a9b7e5b4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrclay/Props/zipball/63fae3035770feee1836f57c7dd52c0a9b7e5b4d",
+                "reference": "63fae3035770feee1836f57c7dd52c0a9b7e5b4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "pimple/pimple": "~3.0",
+                "psr/container": "^1.0|^2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Props\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Clay",
+                    "email": "steve@mrclay.org",
+                    "homepage": "http://www.mrclay.org/"
+                }
+            ],
+            "description": "Props is a simple DI container that allows retrieving values via custom property and method names",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "dependency injection container",
+                "di",
+                "di container"
+            ],
+            "support": {
+                "issues": "https://github.com/mrclay/Props/issues",
+                "source": "https://github.com/mrclay/Props/tree/3.0.1"
+            },
+            "time": "2023-02-13T07:32:41+00:00"
+        },
+        {
             "name": "nikic/fast-route",
             "version": "v1.3.0",
             "source": {
@@ -1490,6 +1891,59 @@
                 }
             ],
             "time": "2021-12-13T09:22:56+00:00"
+        },
+        {
+            "name": "pimple/pimple",
+            "version": "v3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silexphp/Pimple.git",
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/container": "^1.1 || ^2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^5.4@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pimple": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Pimple, a simple Dependency Injection Container",
+            "homepage": "https://pimple.symfony.com",
+            "keywords": [
+                "container",
+                "dependency injection"
+            ],
+            "support": {
+                "source": "https://github.com/silexphp/Pimple/tree/v3.5.0"
+            },
+            "time": "2021-10-28T11:13:42+00:00"
         },
         {
             "name": "psr/cache",
@@ -2013,65 +2467,6 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/2.0.0"
             },
             "time": "2021-10-29T13:22:09+00:00"
-        },
-        {
-            "name": "qiq/qiq",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/qiqphp/qiq.git",
-                "reference": "cac23090f142ffdb2f233085f42856b75c237804"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/qiqphp/qiq/zipball/cac23090f142ffdb2f233085f42856b75c237804",
-                "reference": "cac23090f142ffdb2f233085f42856b75c237804",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-escaper": "^2.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "pds/skeleton": "^1.0",
-                "phpstan/phpstan": "^1.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Qiq\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Qiq Contributors",
-                    "homepage": "https://github.com/qiqphp/qiq/contributors"
-                }
-            ],
-            "description": "Provides TemplateView and TwoStepView implementations using PHP itself as the templating language, and an optional lightweight template markup.",
-            "homepage": "https://github.com/qiqphp/qiq",
-            "keywords": [
-                "Escape",
-                "escaper",
-                "escaping",
-                "template",
-                "template view",
-                "two step view",
-                "two-step view",
-                "twostep view",
-                "view"
-            ],
-            "support": {
-                "issues": "https://github.com/qiqphp/qiq/issues",
-                "source": "https://github.com/qiqphp/qiq/tree/1.1.0"
-            },
-            "time": "2023-03-08T15:07:35+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -3650,6 +4045,63 @@
                 }
             ],
             "time": "2023-02-24T10:42:00+00:00"
+        },
+        {
+            "name": "tubalmartin/cssmin",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port.git",
+                "reference": "3cbf557f4079d83a06f9c3ff9b957c022d7805cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tubalmartin/YUI-CSS-compressor-PHP-port/zipball/3cbf557f4079d83a06f9c3ff9b957c022d7805cf",
+                "reference": "3cbf557f4079d83a06f9c3ff9b957c022d7805cf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "cogpowered/finediff": "0.3.*",
+                "phpunit/phpunit": "4.8.*"
+            },
+            "bin": [
+                "cssmin"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "tubalmartin\\CssMin\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Túbal Martín",
+                    "homepage": "http://tubalmartin.me/"
+                }
+            ],
+            "description": "A PHP port of the YUI CSS compressor",
+            "homepage": "https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port",
+            "keywords": [
+                "compress",
+                "compressor",
+                "css",
+                "cssmin",
+                "minify",
+                "yui"
+            ],
+            "support": {
+                "issues": "https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/issues",
+                "source": "https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port"
+            },
+            "time": "2018-01-15T15:26:51+00:00"
         }
     ],
     "packages-dev": [
@@ -3993,16 +4445,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.9.0",
+            "version": "8.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "8f11e0f5ff984d6862bb9d83aa513dc05a1773ef"
+                "reference": "3d4fe0c803ae15829ef72d90d3d4eee3dd9f79b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/8f11e0f5ff984d6862bb9d83aa513dc05a1773ef",
-                "reference": "8f11e0f5ff984d6862bb9d83aa513dc05a1773ef",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/3d4fe0c803ae15829ef72d90d3d4eee3dd9f79b2",
+                "reference": "3d4fe0c803ae15829ef72d90d3d4eee3dd9f79b2",
                 "shasum": ""
             },
             "require": {
@@ -4042,7 +4494,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.9.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.9.1"
             },
             "funding": [
                 {
@@ -4054,7 +4506,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-25T15:52:37+00:00"
+            "time": "2023-03-27T11:00:16+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

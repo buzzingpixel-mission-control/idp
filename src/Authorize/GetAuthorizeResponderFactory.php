@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\Authorize;
 
-use function dd;
-
-class GetAuthorizeResponderFactory
+readonly class GetAuthorizeResponderFactory
 {
+    public function __construct(private LogInResponder $logInResponder)
+    {
+    }
+
     public function create(): Responder
     {
-        dd('GetAuthorizeResponderFactory');
+        // TODO: Logic for if user is already logged in
+        return $this->logInResponder;
     }
 }

@@ -18,8 +18,8 @@ readonly class GetAuthorizeAction
     }
 
     public function __construct(
+        private ExceptionAction $exceptionAction,
         private GetAuthorizeResponderFactory $responderFactory,
-        private ExceptionAction $exceptionResponder,
     ) {
     }
 
@@ -33,7 +33,7 @@ readonly class GetAuthorizeAction
                 response: $response,
             );
         } catch (Throwable $exception) {
-            return $this->exceptionResponder->invoke(
+            return $this->exceptionAction->invoke(
                 exception: $exception,
                 request: $request,
             );

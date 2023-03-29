@@ -42,7 +42,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-di/invoker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/mission-control-backend-core" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/qiq/qiq" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/crell/tukio" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
@@ -56,6 +55,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/cakephp/utility" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cakephp/core" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/robmorgan/phinx" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/marcusschwarz/lesserphp" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/httpauth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/jsmin-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/props-dic" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/php-template-engine" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/minify-middleware" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/minifier" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tubalmartin/cssmin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

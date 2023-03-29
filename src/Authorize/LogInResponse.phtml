@@ -1,0 +1,30 @@
+<?php
+
+/** @noinspection PhpUndefinedVariableInspection */
+
+declare(strict_types=1);
+
+// phpcs:disable Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace
+// phpcs:disable Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore
+// phpcs:disable Generic.Files.InlineHTML.Found
+
+use BuzzingPixel\Templating\TemplateEngine;
+use MissionControlBackend\Http\HtmlLayout;
+use MissionControlBackend\Templating\FullPageLoading;
+
+/** @phpstan-ignore-next-line */
+assert($this instanceof TemplateEngine);
+
+$this->extends(HtmlLayout::PATH);
+
+?>
+
+<div data-react-container="log-in">
+    <?= $this->partial(FullPageLoading::PATH) ?>
+</div>
+
+<?php $this->sectionStart('react-script') ?>
+<script>
+    console.log('here');
+</script>
+<?php $this->sectionEnd(); ?>
