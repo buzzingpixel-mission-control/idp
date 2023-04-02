@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\EventListeners;
 
-use MissionControlBackend\Http\AuthSetRoutesEvent;
+use MissionControlBackend\Http\AuthApplyRoutesEvent;
 use MissionControlIdp\Authorize\GetAuthorizeAction;
 
 class AuthRouting
 {
-    public function onApplyRoutes(AuthSetRoutesEvent $event): void
+    public function onApplyRoutes(AuthApplyRoutesEvent $event): void
     {
-        GetAuthorizeAction::registerRoute($event->routeCollector);
+        GetAuthorizeAction::registerRoute($event);
     }
 }

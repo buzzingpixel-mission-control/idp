@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\Authorize;
 
+use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlIdp\ExceptionResponse\ExceptionAction;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Slim\Interfaces\RouteCollectorProxyInterface;
 use Throwable;
 
 readonly class GetAuthorizeAction
 {
-    public static function registerRoute(RouteCollectorProxyInterface $r): void
+    public static function registerRoute(ApplyRoutesEvent $event): void
     {
-        $r->get('/oauth2/authorize', self::class);
+        $event->get('/oauth2/authorize', self::class);
     }
 
     public function __construct(
