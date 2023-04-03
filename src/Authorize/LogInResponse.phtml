@@ -20,12 +20,16 @@ assert($this instanceof TemplateEngine);
 
 $this->extends(HtmlLayout::PATH);
 
-VendorCss::addVendorPath(IdpCssJsPaths::CSS);
-
-VendorJs::addVendorPath(IdpCssJsPaths::JS);
-
 ?>
 
 <div data-react-container="log-in">
     <?= $this->partial(FullPageLoading::PATH) ?>
 </div>
+
+<?php
+
+// These need to be loaded after the partial's CSS
+
+VendorCss::addVendorPath(IdpCssJsPaths::CSS);
+
+VendorJs::addVendorPath(IdpCssJsPaths::JS);
