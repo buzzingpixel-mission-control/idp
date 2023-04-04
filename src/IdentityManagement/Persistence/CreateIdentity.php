@@ -8,8 +8,8 @@ use DateTimeInterface;
 use MissionControlBackend\Persistence\MissionControlPdo;
 use MissionControlBackend\Persistence\UuidFactoryWithOrderedTimeCodec;
 use MissionControlIdp\IdentityManagement\ActionResult;
-use MissionControlIdp\IdentityManagement\EmailAddress;
-use MissionControlIdp\IdentityManagement\EmailAddressCollection;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddressCollection;
 use Psr\Clock\ClockInterface;
 
 use function filter_var;

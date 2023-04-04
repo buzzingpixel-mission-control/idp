@@ -8,8 +8,8 @@ use MissionControlBackend\Persistence\CustomQueryParams;
 use MissionControlBackend\Persistence\FetchParameters;
 use MissionControlBackend\Persistence\Sort;
 use MissionControlBackend\Persistence\StringCollection;
-use MissionControlIdp\IdentityManagement\EmailAddress;
-use MissionControlIdp\IdentityManagement\EmailAddressCollection;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddressCollection;
 
 use function array_merge;
 use function implode;

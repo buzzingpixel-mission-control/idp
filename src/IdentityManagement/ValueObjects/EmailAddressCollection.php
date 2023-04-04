@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\IdentityManagement;
+namespace MissionControlIdp\IdentityManagement\ValueObjects;
 
 use Spatie\Cloneable\Cloneable;
 

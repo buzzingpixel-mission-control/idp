@@ -7,6 +7,10 @@ namespace MissionControlIdp\IdentityManagement;
 use Laminas\Escaper\Exception\RuntimeException;
 use MissionControlBackend\Cli\ApplyCliCommandsEvent;
 use MissionControlBackend\Cli\Question;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
+use MissionControlIdp\IdentityManagement\ValueObjects\IsAdmin;
+use MissionControlIdp\IdentityManagement\ValueObjects\Name;
+use MissionControlIdp\IdentityManagement\ValueObjects\Password;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
@@ -35,7 +39,7 @@ readonly class CreateUserCommand
 
         do {
             try {
-                $emailAddress = new EmailAddress(
+                $emailAddress = EmailAddress::fromNative(
                     $this->question->ask(
                         '<fg=cyan>Email Address (required): </>',
                         true,
@@ -54,19 +58,25 @@ readonly class CreateUserCommand
             }
         } while ($validEmail === false);
 
-        $name = $this->question->ask('<fg=cyan>Name: </>');
-
-        $password = $this->question->ask(
-            '<fg=cyan>Password (leave blank to require reset): </>',
+        $name = Name::fromNative(
+            $this->question->ask('<fg=cyan>Name: </>'),
         );
 
-        $isAdmin = $this->question->ask(
-            '<fg=cyan>Is Admin (y/n): </>',
+        $password = Password::fromNative(
+            $this->question->ask(
+                '<fg=cyan>Password (leave blank to require reset): </>',
+            ),
+        );
+
+        $isAdmin = IsAdmin::fromNative(
+            mb_strtolower($this->question->ask(
+                '<fg=cyan>Is Admin (y/n): </>',
+            )) === 'y',
         );
 
         $result = $this->repository->createIdentity(new NewIdentity(
             $emailAddress,
-            mb_strtolower($isAdmin) === 'y',
+            $isAdmin,
             $name,
             $password,
         ));

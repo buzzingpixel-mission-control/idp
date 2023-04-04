@@ -33,12 +33,14 @@ class IdentityRecord extends Record
 
         $record->email_address = $identity->emailAddress->toNative();
 
-        $record->is_admin = $identity->isAdmin;
+        $record->is_admin = $identity->isAdmin->toNative();
 
-        $record->name = $identity->name;
+        $record->name = $identity->name->toNative();
 
-        if ($identity->password !== '') {
-            $record->setPasswordHashFromPassword($identity->password);
+        if ($identity->password->toNative() !== '') {
+            $record->setPasswordHashFromPassword(
+                $identity->password->toNative(),
+            );
         }
 
         return $record;
