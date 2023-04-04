@@ -23,6 +23,10 @@ class CreateIdentitiesTable extends ChangeMigration
             columnName: 'id',
             type: 'uuid',
         )->addColumn(
+            columnName: 'is_admin',
+            type: 'boolean',
+            options: ['default' => 0],
+        )->addColumn(
             columnName: 'email_address',
             type: 'text',
         )->addColumn(

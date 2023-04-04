@@ -25,6 +25,8 @@ class IdentityRecord extends Record
     /** Primary key */
     public string $id = '';
 
+    public bool $is_admin = false;
+
     public string $email_address = '';
 
     public string $name = '';
