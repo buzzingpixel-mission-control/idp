@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\IdentityManagement;
 
+use Laminas\Escaper\Exception\RuntimeException;
 use MissionControlBackend\Cli\ApplyCliCommandsEvent;
 use MissionControlBackend\Cli\Question;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 
+use function implode;
 use function mb_strtolower;
 
 readonly class CreateUserCommand
@@ -69,6 +71,12 @@ readonly class CreateUserCommand
             $password,
         ));
 
-        return $result->success ? 0 : 1;
+        if (! $result->success) {
+            throw new RuntimeException(
+                implode(', ', $result->message),
+            );
+        }
+
+        return 0;
     }
 }

@@ -4,27 +4,10 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\IdentityManagement;
 
-use RuntimeException;
+use Funeralzone\ValueObjectExtensions\ComplexScalars\EmailTrait;
+use Funeralzone\ValueObjects\ValueObject;
 
-use function filter_var;
-
-use const FILTER_VALIDATE_EMAIL;
-
-class EmailAddress
+class EmailAddress implements ValueObject
 {
-    public function __construct(public string $emailAddress)
-    {
-        $validate = filter_var(
-            $emailAddress,
-            FILTER_VALIDATE_EMAIL,
-        );
-
-        if ($validate !== null && $validate !== false) {
-            return;
-        }
-
-        throw new RuntimeException(
-            'Email address must be valid format',
-        );
-    }
+    use EmailTrait;
 }

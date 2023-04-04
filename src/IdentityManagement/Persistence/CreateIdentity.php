@@ -79,9 +79,9 @@ readonly class CreateIdentity
         }
 
         $existingUser = $this->findIdentities->findOneOrNull(
-            parameters: new FindIdentityParameters(
-                emailAddresses: new EmailAddressCollection(addresses: [
-                    new EmailAddress(emailAddress: $emailAddress),
+            new FindIdentityParameters(
+                new EmailAddressCollection([
+                    new EmailAddress($emailAddress),
                 ]),
             ),
         );

@@ -31,7 +31,7 @@ class IdentityRecord extends Record
     {
         $record = new self();
 
-        $record->email_address = $identity->emailAddress->emailAddress;
+        $record->email_address = $identity->emailAddress->toNative();
 
         $record->is_admin = $identity->isAdmin;
 

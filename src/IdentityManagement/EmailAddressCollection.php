@@ -45,7 +45,7 @@ class EmailAddressCollection
     {
         /** @phpstan-ignore-next-line */
         return $this->map(
-            static fn (EmailAddress $e) => $e->emailAddress,
+            static fn (EmailAddress $e) => $e->toNative(),
         );
     }
 }

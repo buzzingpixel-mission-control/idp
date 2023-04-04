@@ -26,12 +26,12 @@ readonly class FindIdentityParameters extends FetchParameters
         Sort|null $sort = null,
     ) {
         parent::__construct(
-            ids: $ids,
-            notIds: $notIds,
-            limit: $limit,
-            offset: $offset,
-            orderBy: $orderBy,
-            sort: $sort,
+            $ids,
+            $notIds,
+            $limit,
+            $offset,
+            $orderBy,
+            $sort,
         );
     }
 
@@ -50,10 +50,10 @@ readonly class FindIdentityParameters extends FetchParameters
         $addresses = $this->emailAddresses ?? new EmailAddressCollection();
 
         return $this->with(
-            emailAddresses: $addresses->with(addresses: array_merge(
+            $addresses->with(array_merge(
                 $addresses->addresses,
                 [
-                    new EmailAddress(emailAddress: $emailAddress),
+                    new EmailAddress($emailAddress),
                 ],
             )),
         );
@@ -70,8 +70,8 @@ readonly class FindIdentityParameters extends FetchParameters
             $build = $buildCustomQuerySection();
 
             $buildCustomQuerySection = new CustomQueryParams(
-                query: $build->query . ' ' . $internalCustomQuery->query,
-                params: array_merge(
+                $build->query . ' ' . $internalCustomQuery->query,
+                array_merge(
                     $build->params,
                     $internalCustomQuery->params,
                 ),
@@ -79,7 +79,7 @@ readonly class FindIdentityParameters extends FetchParameters
         }
 
         return parent::buildQuery(
-            buildCustomQuerySection: static fn () => $buildCustomQuerySection,
+            static fn () => $buildCustomQuerySection,
         );
     }
 
@@ -107,7 +107,7 @@ readonly class FindIdentityParameters extends FetchParameters
 
                     $in[] = ':' . $key;
 
-                    $params[$key] = $email->emailAddress;
+                    $params[$key] = $email->toNative();
 
                     $i++;
                 },
@@ -119,8 +119,8 @@ readonly class FindIdentityParameters extends FetchParameters
         }
 
         return new CustomQueryParams(
-            query: implode(' ', $query),
-            params: $params,
+            implode(' ', $query),
+            $params,
         );
     }
 }
