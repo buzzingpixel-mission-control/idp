@@ -64,6 +64,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/buzzingpixel/minifier" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tubalmartin/cssmin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

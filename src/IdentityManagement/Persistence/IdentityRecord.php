@@ -5,6 +5,11 @@ declare(strict_types=1);
 namespace MissionControlIdp\IdentityManagement\Persistence;
 
 use MissionControlBackend\Persistence\Record;
+use MissionControlIdp\IdentityManagement\NewIdentity;
+
+use function password_hash;
+
+use const PASSWORD_DEFAULT;
 
 // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
 
@@ -22,6 +27,23 @@ class IdentityRecord extends Record
         return self::TABLE_NAME;
     }
 
+    public static function fromNewIdentityEntity(NewIdentity $identity): self
+    {
+        $record = new self();
+
+        $record->email_address = $identity->emailAddress->emailAddress;
+
+        $record->is_admin = $identity->isAdmin;
+
+        $record->name = $identity->name;
+
+        if ($identity->password !== '') {
+            $record->setPasswordHashFromPassword($identity->password);
+        }
+
+        return $record;
+    }
+
     /** Primary key */
     public string $id = '';
 
@@ -34,4 +56,12 @@ class IdentityRecord extends Record
     public string $password_hash = '';
 
     public string $created_at = '';
+
+    public function setPasswordHashFromPassword(string $password): void
+    {
+        $this->password_hash = password_hash(
+            $password,
+            PASSWORD_DEFAULT,
+        );
+    }
 }

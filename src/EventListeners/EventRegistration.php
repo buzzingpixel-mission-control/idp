@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MissionControlIdp\EventListeners;
 
 use Crell\Tukio\OrderedProviderInterface;
+use MissionControlIdp\IdentityManagement\CreateUserCommand;
 
 class EventRegistration
 {
@@ -13,6 +14,11 @@ class EventRegistration
         $provider->addSubscriber(
             AuthRouting::class,
             AuthRouting::class,
+        );
+
+        $provider->addSubscriber(
+            CreateUserCommand::class,
+            CreateUserCommand::class,
         );
 
         $provider->addSubscriber(
