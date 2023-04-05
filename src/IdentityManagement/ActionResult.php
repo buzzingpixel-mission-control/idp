@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\IdentityManagement;
 
+use function implode;
+
+use const PHP_EOL;
+
 readonly class ActionResult
 {
     /** @param string[] $message */
@@ -12,5 +16,10 @@ readonly class ActionResult
         public array $message = [],
         public int|string $errorCode = '',
     ) {
+    }
+
+    public function messageAsString(string $separator = PHP_EOL): string
+    {
+        return implode($separator, $this->message);
     }
 }

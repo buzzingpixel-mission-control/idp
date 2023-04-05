@@ -50,10 +50,10 @@ readonly class FindIdentityParameters extends FetchParameters
         $addresses = $this->emailAddresses ?? new EmailAddressCollection();
 
         return $this->with(
-            $addresses->with(array_merge(
+            emailAddresses: $addresses->with(addresses: array_merge(
                 $addresses->addresses,
                 [
-                    new EmailAddress($emailAddress),
+                    EmailAddress::fromNative($emailAddress),
                 ],
             )),
         );
