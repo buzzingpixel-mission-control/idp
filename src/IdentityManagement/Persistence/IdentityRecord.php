@@ -63,6 +63,12 @@ class IdentityRecord extends Record
 
         $record->created_at = $entity->createdAt->toNative();
 
+        if (! $entity->newPassword->isNull()) {
+            $record->setPasswordHashFromPassword(
+                (string) $entity->newPassword->toNative(),
+            );
+        }
+
         return $record;
     }
 

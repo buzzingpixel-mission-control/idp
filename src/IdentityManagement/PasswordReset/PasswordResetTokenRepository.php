@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace MissionControlIdp\IdentityManagement\PasswordReset;
 
 use DateInterval;
+use MissionControlIdp\IdentityManagement\ActionResult;
 use MissionControlIdp\IdentityManagement\Identity;
 use MissionControlIdp\IdentityManagement\PasswordReset\Persistence\CreatePasswordResetToken;
+use MissionControlIdp\IdentityManagement\PasswordReset\Persistence\DeletePasswordResetToken;
 use MissionControlIdp\IdentityManagement\PasswordReset\Persistence\FindPasswordResetTokens;
 
 readonly class PasswordResetTokenRepository
@@ -14,6 +16,7 @@ readonly class PasswordResetTokenRepository
     public function __construct(
         private FindPasswordResetTokens $findPasswordResetTokens,
         private CreatePasswordResetToken $createPasswordResetToken,
+        private DeletePasswordResetToken $deletePasswordResetToken,
     ) {
     }
 
@@ -42,5 +45,10 @@ readonly class PasswordResetTokenRepository
         return $this->findPasswordResetTokens->findOneByTokenOrNull(
             $token,
         );
+    }
+
+    public function delete(PasswordResetToken $token): ActionResult
+    {
+        return $this->deletePasswordResetToken->delete($token);
     }
 }
