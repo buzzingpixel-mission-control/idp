@@ -36,4 +36,11 @@ readonly class PasswordResetTokenRepository
             $identity,
         );
     }
+
+    public function findOneByTokenOrNull(string $token): PasswordResetToken|null
+    {
+        return $this->findPasswordResetTokens->findOneByTokenOrNull(
+            $token,
+        );
+    }
 }

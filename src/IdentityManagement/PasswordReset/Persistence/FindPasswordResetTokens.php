@@ -45,9 +45,8 @@ readonly class FindPasswordResetTokens
         $this->redisNamespace = $redisNamespace;
     }
 
-    public function findAllByIdentity(
-        Identity $identity,
-    ): PasswordResetTokenCollection {
+    public function findAll(): PasswordResetTokenCollection
+    {
         $keys = $this->redis->keys(
             $this->redisNamespace . 'password_reset_token__*',
         );
@@ -57,7 +56,7 @@ readonly class FindPasswordResetTokens
         }
 
         $storageItems = iterator_to_array(
-            /** @phpstan-ignore-next-line */
+        /** @phpstan-ignore-next-line */
             $this->storage->getItems(array_map(
                 static function (string $key): string {
                     $keyArr = explode(':', $key);
@@ -81,13 +80,35 @@ readonly class FindPasswordResetTokens
             $storageItems,
         ), static fn (PasswordResetToken|null $t) => $t !== null);
 
+        return new PasswordResetTokenCollection($items);
+    }
+
+    public function findAllByIdentity(
+        Identity $identity,
+    ): PasswordResetTokenCollection {
+        $all = $this->findAll();
+
         $items = array_filter(
-            $items,
+            $all->items,
             static fn (
                 PasswordResetToken $t,
             ) => $t->identityId->isSame($identity->id)
         );
 
         return new PasswordResetTokenCollection($items);
+    }
+
+    public function findOneByTokenOrNull(string $token): PasswordResetToken|null
+    {
+        $all = $this->findAll();
+
+        $items = array_filter(
+            $all->items,
+            static fn (
+                PasswordResetToken $t,
+            ) => $t->token->toNative() === $token,
+        );
+
+        return (new PasswordResetTokenCollection($items))->firstOrNull();
     }
 }

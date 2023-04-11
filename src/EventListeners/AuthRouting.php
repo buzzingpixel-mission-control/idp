@@ -8,6 +8,7 @@ use MissionControlBackend\Http\AuthApplyRoutesEvent;
 use MissionControlIdp\Authorize\GetAuthorizeAction;
 use MissionControlIdp\IdentityManagement\PasswordReset\GetPasswordResetAction;
 use MissionControlIdp\IdentityManagement\PasswordReset\PostPasswordResetAction;
+use MissionControlIdp\IdentityManagement\PasswordReset\ResetWithToken\GetResetWithTokenAction;
 
 class AuthRouting
 {
@@ -16,5 +17,6 @@ class AuthRouting
         GetAuthorizeAction::registerRoute($event);
         GetPasswordResetAction::registerRoute($event);
         PostPasswordResetAction::registerRoute($event);
+        GetResetWithTokenAction::registerRoute($event);
     }
 }

@@ -26,4 +26,14 @@ readonly class PasswordResetTokenCollection
     {
         return count($this->items);
     }
+
+    public function first(): PasswordResetToken
+    {
+        return $this->items[0];
+    }
+
+    public function firstOrNull(): PasswordResetToken|null
+    {
+        return $this->items[0] ?? null;
+    }
 }
