@@ -17,8 +17,13 @@ class RegisterBindingsStorage
     public static function register(ContainerBindings $containerBindings): void
     {
         $containerBindings->addBinding(
-            key: IdpStoragePool::class,
-            value: static function (
+            IdpStoragePool::class,
+            IdpRedisAdapter::class,
+        );
+
+        $containerBindings->addBinding(
+            IdpRedisAdapter::class,
+            static function (
                 ContainerInterface $container,
             ): IdpRedisAdapter {
                 $redis = $container->get(Redis::class);
@@ -26,8 +31,8 @@ class RegisterBindingsStorage
                 assert($redis instanceof Redis);
 
                 return new IdpRedisAdapter(
-                    redis: $redis,
-                    namespace: 'mission_control_idp',
+                    $redis,
+                    'mission_control_idp',
                 );
             },
         );
