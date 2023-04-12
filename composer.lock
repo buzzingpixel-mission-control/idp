@@ -314,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/buzzingpixel-mission-control/backend-core.git",
-                "reference": "2e4f89a6ea274134591b4c6259049d1f10f2b045"
+                "reference": "e507947e2e6928fe60d5e087abba09605609f463"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/2e4f89a6ea274134591b4c6259049d1f10f2b045",
-                "reference": "2e4f89a6ea274134591b4c6259049d1f10f2b045",
+                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/e507947e2e6928fe60d5e087abba09605609f463",
+                "reference": "e507947e2e6928fe60d5e087abba09605609f463",
                 "shasum": ""
             },
             "require": {
@@ -334,6 +334,7 @@
                 "ext-pdo": "*",
                 "ext-redis": "*",
                 "funeralzone/valueobjects": "^0.5.0",
+                "httpsoft/http-cookie": "^1.0",
                 "lcobucci/clock": "^3.1",
                 "mnapoli/silly": "^1.8",
                 "monolog/monolog": "^3.3",
@@ -373,7 +374,7 @@
                 "issues": "https://github.com/buzzingpixel-mission-control/backend-core/issues",
                 "source": "https://github.com/buzzingpixel-mission-control/backend-core/tree/main"
             },
-            "time": "2023-04-11T01:29:22+00:00"
+            "time": "2023-04-12T22:37:13+00:00"
         },
         {
             "name": "buzzingpixel/php-queue",
@@ -1352,16 +1353,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.13.8",
+            "version": "8.13.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "2d3f07bb56daa44b9a2f5ff72e41db762f9573d1"
+                "reference": "7cb665df423d453a1fd8e3af50cd4df55ed31c94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/2d3f07bb56daa44b9a2f5ff72e41db762f9573d1",
-                "reference": "2d3f07bb56daa44b9a2f5ff72e41db762f9573d1",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/7cb665df423d453a1fd8e3af50cd4df55ed31c94",
+                "reference": "7cb665df423d453a1fd8e3af50cd4df55ed31c94",
                 "shasum": ""
             },
             "require": {
@@ -1420,7 +1421,7 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php"
             },
-            "time": "2023-03-27T15:36:27+00:00"
+            "time": "2023-04-11T13:48:23+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1475,6 +1476,72 @@
                 "source": "https://github.com/giggsey/Locale/tree/2.3"
             },
             "time": "2022-10-19T20:03:30+00:00"
+        },
+        {
+            "name": "httpsoft/http-cookie",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/httpsoft/http-cookie.git",
+                "reference": "0b4f5d3822e6b816bda98f5b22ca32c357b5992f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/httpsoft/http-cookie/zipball/0b4f5d3822e6b816bda98f5b22ca32c357b5992f",
+                "reference": "0b4f5d3822e6b816bda98f5b22ca32c357b5992f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-handler": "^1.0",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0",
+                "psr/http-server-middleware-implementation": "1.0"
+            },
+            "require-dev": {
+                "httpsoft/http-message": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.6",
+                "vimeo/psalm": "^4.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HttpSoft\\Cookie\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Zyubin",
+                    "email": "mail@devanych.ru",
+                    "homepage": "https://devanych.ru/",
+                    "role": "Founder and lead developer"
+                }
+            ],
+            "description": "Managing cookies with PSR-7 support",
+            "homepage": "https://httpsoft.org/",
+            "keywords": [
+                "cookie",
+                "cookies",
+                "http",
+                "http-cookie",
+                "php",
+                "psr-15",
+                "psr-7"
+            ],
+            "support": {
+                "docs": "https://httpsoft.org/docs/cookie",
+                "issues": "https://github.com/httpsoft/http-cookie/issues",
+                "source": "https://github.com/httpsoft/http-cookie"
+            },
+            "time": "2021-08-31T21:17:16+00:00"
         },
         {
             "name": "intervention/httpauth",
@@ -2170,16 +2237,16 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.1.0",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moneyphp/money.git",
-                "reference": "c8eeeb1f7b7e6ca95490b94a301dc9cb8cb76c2d"
+                "reference": "9682220995ffd396843be5b4ee1e5f2c2d6ecee2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/c8eeeb1f7b7e6ca95490b94a301dc9cb8cb76c2d",
-                "reference": "c8eeeb1f7b7e6ca95490b94a301dc9cb8cb76c2d",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/9682220995ffd396843be5b4ee1e5f2c2d6ecee2",
+                "reference": "9682220995ffd396843be5b4ee1e5f2c2d6ecee2",
                 "shasum": ""
             },
             "require": {
@@ -2253,9 +2320,9 @@
             ],
             "support": {
                 "issues": "https://github.com/moneyphp/money/issues",
-                "source": "https://github.com/moneyphp/money/tree/v4.1.0"
+                "source": "https://github.com/moneyphp/money/tree/v4.1.1"
             },
-            "time": "2022-12-19T20:35:32+00:00"
+            "time": "2023-04-11T09:18:34+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3044,21 +3111,21 @@
         },
         {
             "name": "psr/http-server-middleware",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-server-middleware.git",
-                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5"
+                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/2296f45510945530b9dceb8bcedb5cb84d40c5f5",
-                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5",
+                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
+                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0",
-                "psr/http-message": "^1.0",
+                "psr/http-message": "^1.0 || ^2.0",
                 "psr/http-server-handler": "^1.0"
             },
             "type": "library",
@@ -3079,7 +3146,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP server-side middleware",
@@ -3095,9 +3162,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/http-server-middleware/issues",
-                "source": "https://github.com/php-fig/http-server-middleware/tree/master"
+                "source": "https://github.com/php-fig/http-server-middleware/tree/1.0.2"
             },
-            "time": "2018-10-30T17:12:04+00:00"
+            "time": "2023-04-11T06:14:47+00:00"
         },
         {
             "name": "psr/log",
@@ -5686,16 +5753,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.11",
+            "version": "1.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8aa62e6ea8b58ffb650e02940e55a788cbc3fe21"
+                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8aa62e6ea8b58ffb650e02940e55a788cbc3fe21",
-                "reference": "8aa62e6ea8b58ffb650e02940e55a788cbc3fe21",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
+                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
                 "shasum": ""
             },
             "require": {
@@ -5744,7 +5811,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-04T19:17:42+00:00"
+            "time": "2023-04-12T19:29:52+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",

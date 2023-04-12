@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\ExceptionResponse;
 
-use MissionControlBackend\Http\IsJsonRequest;
+use MissionControlBackend\Http\JsonResponse\IsJsonRequest;
 use Psr\Http\Message\ServerRequestInterface;
 
 readonly class ResponderFactory
