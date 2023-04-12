@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MissionControlIdp\IdentityManagement\PasswordReset;
 
 use BuzzingPixel\Templating\TemplateEngineFactory;
+use MissionControlBackend\Csrf\CsrfTokenGenerator;
 use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlIdp\ErrorIfAuthAction;
 use Psr\Http\Message\ResponseInterface;
@@ -21,6 +22,7 @@ readonly class GetPasswordResetAction
     }
 
     public function __construct(
+        private CsrfTokenGenerator $csrfTokenGenerator,
         private TemplateEngineFactory $templateEngineFactory,
     ) {
     }
@@ -30,7 +32,8 @@ readonly class GetPasswordResetAction
         ResponseInterface $response,
     ): ResponseInterface {
         $templateEngine = $this->templateEngineFactory->create()
-            ->templatePath(__DIR__ . '/GetPasswordReset.phtml');
+            ->templatePath(__DIR__ . '/GetPasswordReset.phtml')
+            ->addVar('csrfToken', $this->csrfTokenGenerator->generate());
 
         $response->getBody()->write($templateEngine->render());
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { CheckCircleIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import { FormValues } from './FormValues';
 import Submit from './Submit';
+import GetCsrfDataSetFromElement from '../GetCsrfDataSetFromElement';
 
 const PasswordResetPage = (
     { reactContainer }: { reactContainer: HTMLDivElement },
@@ -62,7 +63,9 @@ const PasswordResetPage = (
             setShowSuccess(true);
         };
 
-        Submit(data).then(success).catch(success);
+        Submit(data, GetCsrfDataSetFromElement(reactContainer))
+            .then(success)
+            .catch(success);
     };
 
     return (

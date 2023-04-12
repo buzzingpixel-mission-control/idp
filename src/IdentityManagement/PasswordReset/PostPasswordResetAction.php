@@ -8,6 +8,7 @@ use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlIdp\IdentityManagement\IdentityRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\Csrf\Guard as CsrfGuard;
 
 use function implode;
 use function is_array;
@@ -17,7 +18,9 @@ readonly class PostPasswordResetAction
 {
     public static function registerRoute(ApplyRoutesEvent $event): void
     {
-        $event->post('/password-reset', self::class);
+        $event->post('/password-reset', self::class)->add(
+            CsrfGuard::class,
+        );
     }
 
     public function __construct(
