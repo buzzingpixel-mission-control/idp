@@ -314,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/buzzingpixel-mission-control/backend-core.git",
-                "reference": "e507947e2e6928fe60d5e087abba09605609f463"
+                "reference": "25bd941c505d824e3e20d61d5d15e3e5df1508e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/e507947e2e6928fe60d5e087abba09605609f463",
-                "reference": "e507947e2e6928fe60d5e087abba09605609f463",
+                "url": "https://api.github.com/repos/buzzingpixel-mission-control/backend-core/zipball/25bd941c505d824e3e20d61d5d15e3e5df1508e7",
+                "reference": "25bd941c505d824e3e20d61d5d15e3e5df1508e7",
                 "shasum": ""
             },
             "require": {
@@ -374,7 +374,7 @@
                 "issues": "https://github.com/buzzingpixel-mission-control/backend-core/issues",
                 "source": "https://github.com/buzzingpixel-mission-control/backend-core/tree/main"
             },
-            "time": "2023-04-12T22:37:13+00:00"
+            "time": "2023-04-12T23:21:03+00:00"
         },
         {
             "name": "buzzingpixel/php-queue",

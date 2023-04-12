@@ -9,6 +9,7 @@ declare(strict_types=1);
 // phpcs:disable Generic.Files.InlineHTML.Found
 
 use BuzzingPixel\Templating\TemplateEngine;
+use MissionControlBackend\Csrf\CsrfToken;
 use MissionControlBackend\Http\HtmlLayout;
 use MissionControlBackend\Templating\FullPageLoading;
 use MissionControlBackend\Templating\VendorCss;
@@ -18,11 +19,20 @@ use MissionControlIdp\IdpCssJsPaths;
 /** @phpstan-ignore-next-line */
 assert($this instanceof TemplateEngine);
 
+/** @phpstan-ignore-next-line */
+assert($csrfToken instanceof CsrfToken);
+
 $this->extends(HtmlLayout::PATH);
 
 ?>
 
-<div data-react-container="log-in">
+<div
+    data-react-container="log-in"
+    data-csrf-token-name-key="<?= $csrfToken->tokenNameKey ?>"
+    data-csrf-token-name="<?= $csrfToken->tokenName ?>"
+    data-csrf-token-value-key="<?= $csrfToken->tokenValueKey ?>"
+    data-csrf-token-value="<?= $csrfToken->tokenValue ?>"
+>
     <?= $this->partial(FullPageLoading::PATH) ?>
 </div>
 

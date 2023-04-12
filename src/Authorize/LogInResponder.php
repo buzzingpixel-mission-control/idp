@@ -7,12 +7,14 @@ namespace MissionControlIdp\Authorize;
 use BuzzingPixel\Templating\TemplateEngineFactory;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Exception\OAuthServerException;
+use MissionControlBackend\Csrf\CsrfTokenGenerator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 readonly class LogInResponder implements Responder
 {
     public function __construct(
+        private CsrfTokenGenerator $csrfTokenGenerator,
         private AuthorizationServer $authorizationServer,
         private TemplateEngineFactory $templateEngineFactory,
     ) {
@@ -28,7 +30,8 @@ readonly class LogInResponder implements Responder
         );
 
         $templateEngine = $this->templateEngineFactory->create()
-            ->templatePath(__DIR__ . '/LogInResponse.phtml');
+            ->templatePath(__DIR__ . '/LogInResponse.phtml')
+            ->addVar('csrfToken', $this->csrfTokenGenerator->generate());
 
         $response->getBody()->write($templateEngine->render());
 

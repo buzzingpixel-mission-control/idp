@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { XCircleIcon } from '@heroicons/react/20/solid';
 import { FormValues } from './FormValues';
 import Submit from './Submit';
+import GetCsrfDataSetFromElement from '../GetCsrfDataSetFromElement';
 
 const LogInPage = ({ reactContainer }: { reactContainer: HTMLDivElement }) => {
     const {
@@ -20,7 +21,7 @@ const LogInPage = ({ reactContainer }: { reactContainer: HTMLDivElement }) => {
             setErrorMessage('');
         }
 
-        Submit(data)
+        Submit(data, GetCsrfDataSetFromElement(reactContainer))
             .then(() => {
                 window.location.reload();
             })
