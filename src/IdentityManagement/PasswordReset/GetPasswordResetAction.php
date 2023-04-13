@@ -7,7 +7,7 @@ namespace MissionControlIdp\IdentityManagement\PasswordReset;
 use BuzzingPixel\Templating\TemplateEngineFactory;
 use MissionControlBackend\Csrf\CsrfTokenGenerator;
 use MissionControlBackend\Http\ApplyRoutesEvent;
-use MissionControlIdp\ErrorIfAuthAction;
+use MissionControlIdp\NotFoundIfAuthAction;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -18,7 +18,7 @@ readonly class GetPasswordResetAction
         $event->get(
             '/password-reset',
             self::class,
-        )->add(ErrorIfAuthAction::class);
+        )->add(NotFoundIfAuthAction::class);
     }
 
     public function __construct(
