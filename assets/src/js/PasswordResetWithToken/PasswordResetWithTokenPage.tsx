@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { ArrowLeftIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/20/solid';
 import { FormValues } from './FormValues';
 import Submit from './Submit';
+import GetCsrfDataSetFromElement from '../GetCsrfDataSetFromElement';
 
 type DataSet = {
     emailAddress: string;
@@ -82,7 +83,7 @@ const PasswordResetWithTokenPage = (
             setErrorMessage('');
         }
 
-        Submit(data)
+        Submit(data, GetCsrfDataSetFromElement(reactContainer))
             .then(() => {
                 setShowSuccess(true);
             })

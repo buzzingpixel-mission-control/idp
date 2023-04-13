@@ -1,8 +1,16 @@
 import { FormValues } from './FormValues';
 import FetchOptionsBuilder from '../Utility/FetchOptionsBuilder';
+import CsrfDataSet from '../CsrfDataSet';
 
-const Submit = async (formValues: FormValues): Promise<boolean> => {
+const Submit = async (
+    formValues: FormValues,
+    csrfData: CsrfDataSet,
+): Promise<boolean> => {
     try {
+        formValues[csrfData.csrfTokenNameKey] = csrfData.csrfTokenName;
+
+        formValues[csrfData.csrfTokenValueKey] = csrfData.csrfTokenValue;
+
         if (!formValues.password) {
             return Promise.reject(
                 new Error('You must provide a password'),

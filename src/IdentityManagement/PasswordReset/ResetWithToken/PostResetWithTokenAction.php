@@ -10,6 +10,7 @@ use MissionControlIdp\IdentityManagement\PasswordReset\PasswordResetTokenReposit
 use MissionControlIdp\IdentityManagement\ValueObjects\Password;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\Csrf\Guard as CsrfGuard;
 use Slim\Exception\HttpNotFoundException;
 use Throwable;
 
@@ -30,7 +31,7 @@ readonly class PostResetWithTokenAction
         $event->post(
             '/password-reset/with-token/{token}',
             self::class,
-        );
+        )->add(CsrfGuard::class);
     }
 
     /**
