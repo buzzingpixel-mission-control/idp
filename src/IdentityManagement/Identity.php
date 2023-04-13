@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\IdentityManagement;
 
+use League\OAuth2\Server\Entities\UserEntityInterface;
 use MissionControlIdp\IdentityManagement\Persistence\IdentityRecord;
 use MissionControlIdp\IdentityManagement\ValueObjects\CreatedAt;
 use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
@@ -17,7 +18,7 @@ use Spatie\Cloneable\Cloneable;
 
 // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
 
-readonly class Identity
+readonly class Identity implements UserEntityInterface
 {
     use Cloneable;
 
@@ -42,6 +43,11 @@ readonly class Identity
         public CreatedAt $createdAt,
         public Password|NullValue $newPassword = new NullValue(),
     ) {
+    }
+
+    public function getIdentifier(): string
+    {
+        return $this->id->toNative();
     }
 
     /**

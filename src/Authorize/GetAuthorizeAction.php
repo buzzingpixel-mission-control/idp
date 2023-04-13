@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MissionControlIdp\Authorize;
 
 use MissionControlBackend\Http\ApplyRoutesEvent;
+use MissionControlIdp\AuthorizationServerFactory;
 use MissionControlIdp\ExceptionResponse\ExceptionAction;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -20,6 +21,7 @@ readonly class GetAuthorizeAction
     public function __construct(
         private ExceptionAction $exceptionAction,
         private GetAuthorizeResponderFactory $responderFactory,
+        private AuthorizationServerFactory $authorizationServerFactory,
     ) {
     }
 
@@ -28,9 +30,16 @@ readonly class GetAuthorizeAction
         ResponseInterface $response,
     ): ResponseInterface {
         try {
-            return $this->responderFactory->create()->respond(
-                request: $request,
-                response: $response,
+            $server = $this->authorizationServerFactory->create();
+
+            $authRequest = $server->validateAuthorizationRequest(
+                $request,
+            );
+
+            return $this->responderFactory->create($request)->respond(
+                $request,
+                $response,
+                $authRequest,
             );
         } catch (Throwable $exception) {
             return $this->exceptionAction->invoke(

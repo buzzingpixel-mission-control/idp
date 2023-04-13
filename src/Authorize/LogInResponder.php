@@ -7,6 +7,7 @@ namespace MissionControlIdp\Authorize;
 use BuzzingPixel\Templating\TemplateEngineFactory;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
 use MissionControlBackend\Csrf\CsrfTokenGenerator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -24,6 +25,7 @@ readonly class LogInResponder implements Responder
     public function respond(
         ServerRequestInterface $request,
         ResponseInterface $response,
+        AuthorizationRequest $authRequest,
     ): ResponseInterface {
         $this->authorizationServer->validateAuthorizationRequest(
             $request,
