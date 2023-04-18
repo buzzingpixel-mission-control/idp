@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MissionControlIdp\EventListeners;
 
 use MissionControlBackend\Http\AuthApplyRoutesEvent;
+use MissionControlIdp\Authorize\GetAccessTokenAction;
 use MissionControlIdp\Authorize\GetAuthorizeAction;
 use MissionControlIdp\Authorize\PostLogInAction;
 use MissionControlIdp\IdentityManagement\PasswordReset\GetPasswordResetAction;
@@ -22,5 +23,6 @@ class AuthRouting
         GetResetWithTokenAction::registerRoute($event);
         PostResetWithTokenAction::registerRoute($event);
         PostLogInAction::registerRoute($event);
+        GetAccessTokenAction::registerRoute($event);
     }
 }
