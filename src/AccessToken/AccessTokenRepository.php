@@ -29,6 +29,8 @@ readonly class AccessTokenRepository implements AccessTokenRepositoryInterface
     ): AccessTokenEntityInterface {
         $accessToken = new AccessToken();
 
+        $accessToken->setClient($clientEntity);
+
         array_walk(
             $scopes,
             [$accessToken, 'addScope'],
