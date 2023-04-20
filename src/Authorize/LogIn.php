@@ -25,8 +25,8 @@ readonly class LogIn
     public function withCredentials(Credentials $credentials): LogInResult
     {
         $badLogInResult = new LogInResult(
-            loggedIn: false,
-            message: 'Unable to log in with those credentials',
+            false,
+            'Unable to log in with those credentials',
         );
 
         $identity = $this->identityRepository->findOneByEmailAddressOrNull(

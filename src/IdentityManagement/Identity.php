@@ -50,6 +50,13 @@ readonly class Identity implements UserEntityInterface
         return $this->id->toNative();
     }
 
+    public function nameOrEmail(): string
+    {
+        return $this->name->isNotEmpty() ?
+            $this->name->toNative() :
+            $this->emailAddress->toNative();
+    }
+
     /**
      * @param string[] $without
      *

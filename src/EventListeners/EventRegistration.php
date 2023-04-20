@@ -12,6 +12,11 @@ class EventRegistration
     public static function register(OrderedProviderInterface $provider): void
     {
         $provider->addSubscriber(
+            ApiRouting::class,
+            ApiRouting::class,
+        );
+
+        $provider->addSubscriber(
             AuthRouting::class,
             AuthRouting::class,
         );

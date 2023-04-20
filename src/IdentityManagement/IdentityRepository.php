@@ -9,6 +9,10 @@ use MissionControlIdp\IdentityManagement\Persistence\FindIdentities;
 use MissionControlIdp\IdentityManagement\Persistence\FindIdentityParameters;
 use MissionControlIdp\IdentityManagement\Persistence\IdentityRecord;
 use MissionControlIdp\IdentityManagement\Persistence\SaveIdentity;
+use Psr\Http\Message\ServerRequestInterface;
+
+use function assert;
+use function is_string;
 
 readonly class IdentityRepository
 {
@@ -31,6 +35,15 @@ readonly class IdentityRepository
         return $this->saveIdentity->save(IdentityRecord::fromEntity(
             $identity,
         ));
+    }
+
+    public function findOneByRequest(ServerRequestInterface $request): Identity
+    {
+        $identityId = $request->getAttribute('oauth_user_id');
+
+        assert(is_string($identityId));
+
+        return $this->findOneById($identityId);
     }
 
     public function findOneById(string $id): Identity

@@ -10,4 +10,14 @@ use Funeralzone\ValueObjects\ValueObject;
 class Name implements ValueObject
 {
     use StringTrait;
+
+    public function isEmpty(): bool
+    {
+        return $this->toNative() === '';
+    }
+
+    public function isNotEmpty(): bool
+    {
+        return ! $this->isEmpty();
+    }
 }

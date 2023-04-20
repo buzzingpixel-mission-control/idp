@@ -10,7 +10,8 @@ class RegisterBindings
 {
     public static function register(ContainerBindings $containerBindings): void
     {
-        RegisterBindingsAuthServer::register(containerBindings: $containerBindings);
-        RegisterBindingsStorage::register(containerBindings: $containerBindings);
+        RegisterBindingsAuthServer::register($containerBindings);
+        RegisterBindingsResourceServer::register($containerBindings);
+        RegisterBindingsStorage::register($containerBindings);
     }
 }
