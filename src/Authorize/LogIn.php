@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\Authorize;
 
+use DateInterval;
 use HttpSoft\Cookie\CookieManagerInterface;
 use MissionControlBackend\Cookies\CookieCreator;
 use MissionControlIdp\IdentityManagement\IdentityRepository;
 use MissionControlIdp\IdentityManagement\ValidatePassword;
 use MissionControlIdp\Session\Session;
 use MissionControlIdp\Session\SessionRepository;
+use Psr\Clock\ClockInterface;
 
 readonly class LogIn
 {
     public function __construct(
+        private ClockInterface $clock,
         private CookieCreator $cookieCreator,
         private ValidatePassword $validatePassword,
         private SessionRepository $sessionRepository,
@@ -55,6 +58,7 @@ readonly class LogIn
         $sessionCookie = $this->cookieCreator->create(
             Session::COOKIE_NAME,
             $session->sessionKey(),
+            expire: $this->clock->now()->add(new DateInterval('P1Y')),
         );
 
         $this->cookieManager->set($sessionCookie);
