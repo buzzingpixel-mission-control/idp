@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api;
+namespace MissionControlIdp\Api\UserInfo;
 
 use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlIdp\Authorize\ResourceServerMiddlewareWrapper;
@@ -42,7 +42,8 @@ readonly class GetUserInfoAction
         $response->getBody()->write((string) json_encode(
             [
                 'emailAddress' => $identity->emailAddress->toNative(),
-                'name' => $identity->nameOrEmail(),
+                'name' => $identity->name->toNative(),
+                'nameOrEmail' => $identity->nameOrEmail(),
                 'isAdmin' => $identity->isAdmin->toNative(),
             ],
             JSON_PRETTY_PRINT,
