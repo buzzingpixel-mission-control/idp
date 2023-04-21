@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserInfo\EditName;
+namespace MissionControlIdp\Api\UserInfo;
 
 use MissionControlBackend\Http\JsonResponse\RespondWith;
 use MissionControlBackend\Http\JsonResponse\RespondWithArrayAndStatus;
@@ -10,7 +10,7 @@ use MissionControlIdp\IdentityManagement\ActionResult;
 
 use function implode;
 
-class PostEditNameResponseFactory
+class ActionResultResponseFactory
 {
     public function createResponse(ActionResult $result): RespondWith
     {

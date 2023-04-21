@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserInfo\EditName;
+namespace MissionControlIdp\Api\UserInfo\EditEmail;
 
 use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlBackend\Http\JsonResponse\JsonResponder;
 use MissionControlIdp\Api\UserInfo\ActionResultResponseFactory;
 use MissionControlIdp\Authorize\ResourceServerMiddlewareWrapper;
 use MissionControlIdp\IdentityManagement\IdentityRepository;
-use MissionControlIdp\IdentityManagement\ValueObjects\Name;
+use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 use function is_array;
 
-readonly class PostEditNameAction
+readonly class PostEditEmailAction
 {
     public static function registerRoute(ApplyRoutesEvent $event): void
     {
-        $event->any('/user-info/edit/name', self::class)
+        $event->any('/user-info/edit/email', self::class)
             ->add(ResourceServerMiddlewareWrapper::class);
     }
 
@@ -47,9 +47,11 @@ readonly class PostEditNameAction
         return $this->jsonResponder->respond(
             $this->responseFactory->createResponse(
                 $this->identityRepository->saveIdentity(
-                    $identity->with(name: Name::fromNative(
-                        $postData->name->toNative(),
-                    )),
+                    $identity->with(
+                        emailAddress: EmailAddress::fromNative(
+                            $postData->email->toNative(),
+                        ),
+                    ),
                 ),
             ),
         );
