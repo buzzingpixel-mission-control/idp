@@ -83,6 +83,10 @@ class IdentityRecord extends Record
 
     public string $password_hash = '';
 
+    public bool $is_active = true;
+
+    public string $timezone = 'US/Central';
+
     public string $created_at = '';
 
     public function setPasswordHashFromPassword(string $password): void

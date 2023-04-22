@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 namespace MissionControlIdp\IdentityManagement;
 
+use DateTimeZone;
 use League\OAuth2\Server\Entities\UserEntityInterface;
 use MissionControlIdp\IdentityManagement\Persistence\IdentityRecord;
 use MissionControlIdp\IdentityManagement\ValueObjects\CreatedAt;
 use MissionControlIdp\IdentityManagement\ValueObjects\EmailAddress;
 use MissionControlIdp\IdentityManagement\ValueObjects\Id;
+use MissionControlIdp\IdentityManagement\ValueObjects\IsActive;
 use MissionControlIdp\IdentityManagement\ValueObjects\IsAdmin;
 use MissionControlIdp\IdentityManagement\ValueObjects\Name;
 use MissionControlIdp\IdentityManagement\ValueObjects\NullValue;
 use MissionControlIdp\IdentityManagement\ValueObjects\Password;
 use MissionControlIdp\IdentityManagement\ValueObjects\PasswordHash;
+use MissionControlIdp\IdentityManagement\ValueObjects\Timezone;
 use Spatie\Cloneable\Cloneable;
 
 // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
@@ -31,6 +34,8 @@ readonly class Identity implements UserEntityInterface
             Name::fromNative($record->name),
             PasswordHash::fromNative($record->password_hash),
             CreatedAt::fromNative($record->created_at),
+            IsActive::fromNative($record->is_active),
+            Timezone::fromNative($record->timezone),
         );
     }
 
@@ -41,6 +46,8 @@ readonly class Identity implements UserEntityInterface
         public Name $name,
         public PasswordHash $passwordHash,
         public CreatedAt $createdAt,
+        public IsActive $isActive = new IsActive(true),
+        public Timezone $timezone = new Timezone(new DateTimeZone('US/Central')),
         public Password|NullValue $newPassword = new NullValue(),
     ) {
     }
@@ -75,6 +82,8 @@ readonly class Identity implements UserEntityInterface
             'name' => $this->name->toNative(),
             'passwordHash' => $this->passwordHash->toNative(),
             'createdAt' => $this->createdAt->toNative(),
+            'isActive' => $this->isActive->toNative(),
+            'timezone' => $this->timezone->toNative(),
             'newPassword' => $this->newPassword->toNative(),
         ];
 

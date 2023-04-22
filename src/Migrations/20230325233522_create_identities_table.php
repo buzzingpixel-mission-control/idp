@@ -36,6 +36,13 @@ class CreateIdentitiesTable extends ChangeMigration
             columnName: 'password_hash',
             type: 'string',
         )->addColumn(
+            columnName: 'is_active',
+            type: 'boolean',
+            options: ['default' => 1],
+        )->addColumn(
+            columnName: 'timezone',
+            type: 'string',
+        )->addColumn(
             columnName: 'created_at',
             type: 'datetime',
         )->create();
