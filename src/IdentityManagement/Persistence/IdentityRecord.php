@@ -61,6 +61,10 @@ class IdentityRecord extends Record
 
         $record->password_hash = $entity->passwordHash->toNative();
 
+        $record->is_active = $entity->isActive->toNative();
+
+        $record->timezone = $entity->timezone->toNative();
+
         $record->created_at = $entity->createdAt->toNative();
 
         if (! $entity->newPassword->isNull()) {

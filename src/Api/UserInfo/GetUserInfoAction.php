@@ -45,6 +45,7 @@ readonly class GetUserInfoAction
                 'name' => $identity->name->toNative(),
                 'nameOrEmail' => $identity->nameOrEmail(),
                 'isAdmin' => $identity->isAdmin->toNative(),
+                'timezone' => $identity->timezone->toNative(),
             ],
             JSON_PRETTY_PRINT,
         ));

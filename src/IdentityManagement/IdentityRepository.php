@@ -39,6 +39,12 @@ readonly class IdentityRepository
 
     public function findOneByRequest(ServerRequestInterface $request): Identity
     {
+        $identity = $request->getAttribute('identity');
+
+        if ($identity instanceof Identity) {
+            return $identity;
+        }
+
         $identityId = $request->getAttribute('oauth_user_id');
 
         assert(is_string($identityId));
@@ -49,6 +55,12 @@ readonly class IdentityRepository
     public function findOneByRequestOrNull(
         ServerRequestInterface $request,
     ): Identity|null {
+        $identity = $request->getAttribute('identity');
+
+        if ($identity instanceof Identity) {
+            return $identity;
+        }
+
         $identityId = $request->getAttribute('oauth_user_id');
 
         assert(is_string($identityId));

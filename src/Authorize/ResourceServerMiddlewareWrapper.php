@@ -66,11 +66,13 @@ readonly class ResourceServerMiddlewareWrapper implements MiddlewareInterface
             $response->getBody()->write((string) json_encode([
                 'error' => 'user_inactive',
                 'error_description' => 'The user is inactive',
-                'message' => 'Check with the administrator to re-activate your account',
+                'message' => 'Check with you admin to re-activate your account',
             ]));
 
             return $response->withStatus(403);
         }
+
+        $request = $request->withAttribute('identity', $identity);
 
         return $handler->handle($request);
     }
