@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects;
+namespace MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects;
 
 use DateTimeZone;
 use Funeralzone\ValueObjects\ValueObject;

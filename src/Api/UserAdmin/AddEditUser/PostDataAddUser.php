@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserAdmin\AddUser;
+namespace MissionControlIdp\Api\UserAdmin\AddEditUser;
 
-use MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects\Email;
-use MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects\IsAdmin;
-use MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects\Name;
-use MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects\Password;
-use MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects\Timezone;
+use MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects\Email;
+use MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects\IsAdmin;
+use MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects\Name;
+use MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects\Password;
+use MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects\Timezone;
 
-readonly class PostData
+readonly class PostDataAddUser
 {
     /** @param string[] $data */
     public static function fromRawPostData(array $data): self

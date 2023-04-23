@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserAdmin\AddUser\ValueObjects;
+namespace MissionControlIdp\Api\UserAdmin\AddEditUser\ValueObjects;
 
 use Funeralzone\ValueObjects\Scalars\StringTrait;
 use Funeralzone\ValueObjects\ValueObject;

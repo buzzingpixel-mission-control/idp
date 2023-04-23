@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MissionControlIdp\Api\UserAdmin\AddUser;
+namespace MissionControlIdp\Api\UserAdmin\AddEditUser;
 
 use MissionControlBackend\Http\ApplyRoutesEvent;
 use MissionControlBackend\Http\JsonResponse\JsonResponder;
@@ -43,7 +43,7 @@ readonly class PostAddUserAction
     ): ResponseInterface {
         $rawPostData = $request->getParsedBody();
 
-        $postData = PostData::fromRawPostData(
+        $postData = PostDataAddUser::fromRawPostData(
             is_array($rawPostData) ? $rawPostData : [],
         );
 
