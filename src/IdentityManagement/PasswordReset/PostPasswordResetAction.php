@@ -14,6 +14,8 @@ use function implode;
 use function is_array;
 use function json_encode;
 
+use const JSON_PRETTY_PRINT;
+
 readonly class PostPasswordResetAction
 {
     public static function registerRoute(ApplyRoutesEvent $event): void
@@ -48,7 +50,7 @@ readonly class PostPasswordResetAction
                 'error' => 'validation',
                 'error_description' => $msg,
                 'message' => $msg,
-            ]));
+            ], JSON_PRETTY_PRINT));
 
             return $response;
         }

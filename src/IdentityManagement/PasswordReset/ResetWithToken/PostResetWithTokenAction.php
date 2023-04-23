@@ -18,6 +18,8 @@ use function implode;
 use function is_array;
 use function json_encode;
 
+use const JSON_PRETTY_PRINT;
+
 readonly class PostResetWithTokenAction
 {
     public function __construct(
@@ -77,7 +79,7 @@ readonly class PostResetWithTokenAction
                 'error' => 'validation',
                 'error_description' => $msg,
                 'message' => $msg,
-            ]));
+            ], JSON_PRETTY_PRINT));
 
             return $response;
         }
@@ -97,7 +99,7 @@ readonly class PostResetWithTokenAction
                 'error' => 'validation',
                 'error_description' => $msg,
                 'message' => $msg,
-            ]));
+            ], JSON_PRETTY_PRINT));
 
             return $response;
         }
@@ -105,7 +107,10 @@ readonly class PostResetWithTokenAction
         $this->tokenRepository->delete($tokenEntity);
 
         $response->getBody()->write(
-            (string) json_encode(['success' => true]),
+            (string) json_encode(
+                ['success' => true],
+                JSON_PRETTY_PRINT,
+            ),
         );
 
         return $response;

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace MissionControlIdp\EventListeners;
 
 use MissionControlBackend\Http\ApiApplyRoutesEvent;
+use MissionControlIdp\Api\UserAdmin\AddUser\PostAddUserAction;
+use MissionControlIdp\Api\UserAdmin\GetAllUsersAction;
 use MissionControlIdp\Api\UserInfo\EditEmail\PostEditEmailAction;
 use MissionControlIdp\Api\UserInfo\EditName\PostEditNameAction;
 use MissionControlIdp\Api\UserInfo\EditPassword\PostEditPasswordAction;
@@ -20,5 +22,7 @@ class ApiRouting
         PostEditEmailAction::registerRoute($event);
         PostEditPasswordAction::registerRoute($event);
         PostEditTimezoneAction::registerRoute($event);
+        GetAllUsersAction::registerRoute($event);
+        PostAddUserAction::registerRoute($event);
     }
 }

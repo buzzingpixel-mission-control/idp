@@ -44,6 +44,8 @@ class IdentityRecord extends Record
             );
         }
 
+        $record->timezone = $entity->timezone->toNative();
+
         return $record;
     }
 
