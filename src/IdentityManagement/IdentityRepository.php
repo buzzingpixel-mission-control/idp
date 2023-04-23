@@ -46,6 +46,16 @@ readonly class IdentityRepository
         return $this->findOneById($identityId);
     }
 
+    public function findOneByRequestOrNull(
+        ServerRequestInterface $request,
+    ): Identity|null {
+        $identityId = $request->getAttribute('oauth_user_id');
+
+        assert(is_string($identityId));
+
+        return $this->findOneByIdOrNull($identityId);
+    }
+
     public function findOneById(string $id): Identity
     {
         return Identity::fromRecord(
