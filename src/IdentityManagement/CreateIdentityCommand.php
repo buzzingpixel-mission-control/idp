@@ -18,7 +18,7 @@ use Throwable;
 use function implode;
 use function mb_strtolower;
 
-readonly class CreateUserCommand
+readonly class CreateIdentityCommand
 {
     public static function onApplyCommands(ApplyCliCommandsEvent $event): void
     {
