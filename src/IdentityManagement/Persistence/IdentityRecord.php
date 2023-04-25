@@ -16,16 +16,14 @@ use const PASSWORD_DEFAULT;
 
 class IdentityRecord extends Record
 {
-    private const TABLE_NAME = 'identities';
-
     public static function getTableName(): string
     {
-        return self::TABLE_NAME;
+        return IdentitiesTable::TABLE_NAME;
     }
 
     public function tableName(): string
     {
-        return self::TABLE_NAME;
+        return IdentitiesTable::TABLE_NAME;
     }
 
     public static function fromNewIdentityEntity(NewIdentity $entity): self
