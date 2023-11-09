@@ -16,7 +16,14 @@ use function implode;
 
 readonly class FindIdentityParameters extends FetchParameters
 {
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function __construct(
+        public bool|null $isActive = null,
+        public bool|null $isAdmin = null,
         public EmailAddressCollection|null $emailAddresses = null,
         StringCollection|null $ids = null,
         StringCollection|null $notIds = null,
@@ -43,6 +50,16 @@ readonly class FindIdentityParameters extends FetchParameters
     public function tableName(): string
     {
         return self::getTableName();
+    }
+
+    public function withIsActive(bool|null $isActive): static
+    {
+        return $this->with(isActive: $isActive);
+    }
+
+    public function withIsAdmin(bool|null $isActive): static
+    {
+        return $this->with(isAdmin: $isActive);
     }
 
     public function withEmailAddress(string $emailAddress): static
@@ -88,6 +105,14 @@ readonly class FindIdentityParameters extends FetchParameters
         $params = [];
 
         $query = [];
+
+        if ($this->isActive !== null) {
+            $query[] = 'AND is_active = ' . ($this->isActive ? 'TRUE' : 'FALSE');
+        }
+
+        if ($this->isAdmin !== null) {
+            $query[] = 'AND is_admin = ' . ($this->isAdmin ? 'TRUE' : 'FALSE');
+        }
 
         if (
             $this->emailAddresses !== null &&

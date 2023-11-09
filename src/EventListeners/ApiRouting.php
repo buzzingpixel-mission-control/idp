@@ -13,6 +13,7 @@ use MissionControlIdp\Api\UserInfo\EditName\PostEditNameAction;
 use MissionControlIdp\Api\UserInfo\EditPassword\PostEditPasswordAction;
 use MissionControlIdp\Api\UserInfo\EditTimezone\PostEditTimezoneAction;
 use MissionControlIdp\Api\UserInfo\GetUserInfoAction;
+use MissionControlIdp\Api\Users\GetUsersListAction;
 
 class ApiRouting
 {
@@ -26,5 +27,6 @@ class ApiRouting
         GetAllUsersAction::registerRoute($event);
         PostAddUserAction::registerRoute($event);
         PostEditUserAction::registerRoute($event);
+        GetUsersListAction::registerRoute($event);
     }
 }
